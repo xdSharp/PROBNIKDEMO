@@ -1,0 +1,25 @@
+﻿<Window x:Class="AllForLife.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Товары" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="ProductsDataGrid" VerticalAlignment="Bottom" AutoGenerateColumns="False" Height="434">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Артикул" Binding="{Binding Article}" />
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}" />
+                <DataGridTextColumn Header="Скидка" Binding="{Binding CurrentDiscount}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBox Name="SearchBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="424,10,0,0" Text="Поиск..." />
+        <ComboBox Name="DiscountFilter" HorizontalAlignment="Right" VerticalAlignment="Top" Width="150" Margin="10">
+            <ComboBoxItem Content="Все диапазоны" />
+            <ComboBoxItem Content="0-9.99%" />
+            <ComboBoxItem Content="10-14.99%" />
+            <ComboBoxItem Content="15% и более" />
+        </ComboBox>
+
+        <TextBlock Name="CountDisplay" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" />
+    </Grid>
+</Window>
